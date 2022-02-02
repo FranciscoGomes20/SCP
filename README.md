@@ -58,4 +58,6 @@ Isso irá rodar o projeto em um servidor local, caso uma janela do navegador nã
 
 ## Contribuições
 
-@cristiansuzuki
+<a href="https://github.com/cristiansuzuki/"></a> [@cristiansuzuki](https://github.com/cristiansuzuki) 
+
+
