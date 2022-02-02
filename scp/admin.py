@@ -1,4 +1,5 @@
 from django.contrib import admin
+from pkg_resources import Requirement
 from .models import *
 
 # Register your models here.

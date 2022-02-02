@@ -24,7 +24,7 @@ class Setor(models.Model):
 class Chamado(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    upload = models.FileField(upload_to ='uploads/')
+    upload = models.FileField(upload_to ='uploads/', blank=True, null=True)
     data_criacao = models.DateTimeField(default=datetime.now())
     data_final = models.DateTimeField(blank=True, null=True)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE, blank=True, null=True)
