@@ -1,6 +1,6 @@
-from datetime import datetime
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 
 # Create your models here.
 class Categoria(models.Model):
@@ -37,8 +37,10 @@ class Chamado(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
     upload = models.FileField(upload_to ='uploads/', blank=True, null=True)
-    data_criacao = models.DateTimeField(default=datetime.now())
+    data_criacao = models.DateTimeField(default=timezone.now)
     data_final = models.DateTimeField(blank=True, null=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='usuario', on_delete=models.CASCADE, blank=True, null=True)
+    funcionario = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='funcionario', on_delete=models.CASCADE, blank=True, null=True)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE, blank=True, null=True)
     status = models.ForeignKey('Status', on_delete=models.CASCADE, blank=True, null=True)
     setor = models.ForeignKey('Setor', on_delete=models.CASCADE, blank=True, null=True)
