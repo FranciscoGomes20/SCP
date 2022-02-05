@@ -1,4 +1,69 @@
-{% extends 'base.html' %} {% load static %} {% block container %}
+{% extends 'base.html' %}
+
+{% block title %} Black Dashboard by Creative Tim {% endblock %}
+
+{% block map %} Dashboard {% endblock %}
+
+{% block menu %}
+<ul class="nav">
+  <li class="active">
+    <a href="{% url 'index' %}">
+      <i class="tim-icons icon-chart-pie-36"></i>
+      <p>Dashboard</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'icons' %}">
+      <i class="tim-icons icon-atom"></i>
+      <p>Icons</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'map' %}">
+      <i class="tim-icons icon-pin"></i>
+      <p>Maps</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'notifications' %}">
+      <i class="tim-icons icon-bell-55"></i>
+      <p>Notifications</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'user' %}">
+      <i class="tim-icons icon-single-02"></i>
+      <p>User Profile</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'tables' %}">
+      <i class="tim-icons icon-puzzle-10"></i>
+      <p>Table List</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'typography' %}">
+      <i class="tim-icons icon-align-center"></i>
+      <p>Typography</p>
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'rtl' %}">
+      <i class="tim-icons icon-world"></i>
+      <p>RTL Support</p>
+    </a>
+  </li>
+  <li class="active-pro">
+    <a href="{% url 'upgrade' %}">
+      <i class="tim-icons icon-spaceship"></i>
+      <p>Upgrade to PRO</p>
+    </a>
+  </li>
+</ul>
+{% endblock %}
+
+{% block container %}
 
 <div class="content">
   <div class="row">
