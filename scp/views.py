@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def loginUser(request):
@@ -7,7 +8,7 @@ def loginUser(request):
 
 @login_required
 def index(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'tables.html')
 
 @login_required
 def icons(request):
@@ -40,3 +41,8 @@ def rtl(request):
 @login_required
 def upgrade(request):
     return render(request, 'upgrade.html')
+
+@login_required
+def lista_chamados_admin(request):
+    return render(request, 'tables.html', {'chamados': Chamado.objects.all()})
+    

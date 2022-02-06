@@ -71,7 +71,7 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title"> Chamados </h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -79,118 +79,46 @@
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                          Name
+                          Titulo
+                        </th>
+                         <th>
+                          Usuário
+                        </th>  
+                        <th>
+                          Atribuído
                         </th>
                         <th>
-                          Country
+                          Categoria
+                        </th>                      
+                        <th>
+                          Status
                         </th>
                         <th>
-                          City
+                          Data Final
                         </th>
-                        <th class="text-center">
-                          Salary
-                        </th>
+                       <th>
+                          Acessar
+                        </th>                                       
                       </tr>
                     </thead>
                     <tbody>
+                      
+                      {% for chamado in chamados %}
+
                       <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td class="text-center">
-                          $36,738
-                        </td>
+                        <td>{{ chamado.titulo }}</td>
+                        <td>{{ chamado.usuario }}</td>
+                        <td>{{ chamado.funcionario }}</td>
+                        <td>{{ chamado.categoria }}</td>
+                        <td>{{ chamado.status }}</td>
+                        <td>{{ chamado.data_final }}</td>
+                        <td><a href="/tables"
+                               class="btn btn-info btn-icon-split" style="display: flex; justify-content: center;"><span class="icon text-white-50"></span>
+                            <span class="text">Acessar</span>
+                        </a></td>
                       </tr>
-                      <tr>
-                        <td>
-                          Minerva Hooper
-                        </td>
-                        <td>
-                          Curaçao
-                        </td>
-                        <td>
-                          Sinaai-Waas
-                        </td>
-                        <td class="text-center">
-                          $23,789
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Sage Rodriguez
-                        </td>
-                        <td>
-                          Netherlands
-                        </td>
-                        <td>
-                          Baileux
-                        </td>
-                        <td class="text-center">
-                          $56,142
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Philip Chaney
-                        </td>
-                        <td>
-                          Korea, South
-                        </td>
-                        <td>
-                          Overland Park
-                        </td>
-                        <td class="text-center">
-                          $38,735
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Doris Greene
-                        </td>
-                        <td>
-                          Malawi
-                        </td>
-                        <td>
-                          Feldkirchen in Kärnten
-                        </td>
-                        <td class="text-center">
-                          $63,542
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Mason Porter
-                        </td>
-                        <td>
-                          Chile
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $78,615
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Jon Porter
-                        </td>
-                        <td>
-                          Portugal
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $98,615
-                        </td>
-                      </tr>
+
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
