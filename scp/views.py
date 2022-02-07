@@ -8,7 +8,19 @@ def loginUser(request):
 
 @login_required
 def index(request):
-    return render(request, 'tables.html')
+    return render(request, 'home.html', {'chamados': Chamado.objects.all()})
+
+@login_required
+def register_tickets(request):
+    return render(request, 'register-tickets.html')
+
+@login_required
+def all_tickets(request):
+    return render(request, 'all-tickets.html')
+
+@login_required
+def dashboard(request):
+    return render(request, 'dashboard.html')
 
 @login_required
 def icons(request):
@@ -27,22 +39,7 @@ def user(request):
     return render(request, 'user.html')
 
 @login_required
-def tables(request):
-    return render(request, 'tables.html')
-
-@login_required
 def typography(request):
     return render(request, 'typography.html')
 
-@login_required
-def rtl(request):
-    return render(request, 'rtl.html')
-
-@login_required
-def upgrade(request):
-    return render(request, 'upgrade.html')
-
-@login_required
-def lista_chamados_admin(request):
-    return render(request, 'tables.html', {'chamados': Chamado.objects.all()})
     
