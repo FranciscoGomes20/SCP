@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {% block map %}
+    Home
+  {% endblock %}
+    - Username
+{% endblock %}
+
+{% block container %}
+
+<!-- End Navbar -->
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header">
+          <h4 class="card-title"> New tickets </h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table tablesorter " id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>
+                    Titulo
+                  </th>
+                    <th>
+                    Usuário
+                  </th>  
+                  <th>
+                    Atribuído
+                  </th>
+                  <th>
+                    Categoria
+                  </th>                      
+                  <th>
+                    Status
+                  </th>
+                  <th>
+                    Data Final
+                  </th>
+                  <th>
+                    Acessar
+                  </th>                                       
+                </tr>
+              </thead>
+              <tbody>
+                {% for chamado in chamados %}
+                <tr>
+                  <td>{{ chamado.titulo }}</td>
+                  <td>{{ chamado.usuario }}</td>
+                  <td>{{ chamado.funcionario }}</td>
+                  <td>{{ chamado.categoria }}</td>
+                  <td>{{ chamado.status }}</td>
+                  <td>{{ chamado.data_final }}</td>
+                  <td><a href="#"
+                          class="btn btn-info btn-icon-split" style="display: flex; justify-content: center;"><span class="icon text-white-50"></span>
+                      <span class="text">Assumir chamado</span>
+                  </a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card  card-plain">
+        <div class="card-header">
+          <h4 class="card-title"> Meus chamados</h4>
+          <p class="category"> Aqui estão todos os chamados que eu abri.</p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table tablesorter " id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Country
+                  </th>
+                  <th>
+                    City
+                  </th>
+                  <th class="text-center">
+                    Salary
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Dakota Rice
+                  </td>
+                  <td>
+                    Niger
+                  </td>
+                  <td>
+                    Oud-Turnhout
+                  </td>
+                  <td class="text-center">
+                    $36,738
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Minerva Hooper
+                  </td>
+                  <td>
+                    Curaçao
+                  </td>
+                  <td>
+                    Sinaai-Waas
+                  </td>
+                  <td class="text-center">
+                    $23,789
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Sage Rodriguez
+                  </td>
+                  <td>
+                    Netherlands
+                  </td>
+                  <td>
+                    Baileux
+                  </td>
+                  <td class="text-center">
+                    $56,142
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Philip Chaney
+                  </td>
+                  <td>
+                    Korea, South
+                  </td>
+                  <td>
+                    Overland Park
+                  </td>
+                  <td class="text-center">
+                    $38,735
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Doris Greene
+                  </td>
+                  <td>
+                    Malawi
+                  </td>
+                  <td>
+                    Feldkirchen in Kärnten
+                  </td>
+                  <td class="text-center">
+                    $63,542
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Mason Porter
+                  </td>
+                  <td>
+                    Chile
+                  </td>
+                  <td>
+                    Gloucester
+                  </td>
+                  <td class="text-center">
+                    $78,615
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Jon Porter
+                  </td>
+                  <td>
+                    Portugal
+                  </td>
+                  <td>
+                    Gloucester
+                  </td>
+                  <td class="text-center">
+                    $98,615
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

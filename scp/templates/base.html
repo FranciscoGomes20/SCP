@@ -14,7 +14,7 @@
       href="{% static 'img/apple-icon.png' %}"
     />
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}" />
-    <title>Black Dashboard by Creative Tim</title>
+    <title>{% block title %} <!-- TITULO DA PAGINA --> {% endblock %}</title>
     <!--     Fonts and icons     -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"
@@ -35,74 +35,73 @@
   <body class="">
     <div class="wrapper">
       <div class="sidebar">
-        <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-    -->
+        <!-- Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red" -->
         <div class="sidebar-wrapper">
           <div class="logo">
             <a href="javascript:void(0)" class="simple-text logo-mini"> CT </a>
             <a href="javascript:void(0)" class="simple-text logo-normal">
-              Creative Tim
+              MENU
             </a>
           </div>
           <ul class="nav">
-            <li class="active">
-              <a href="./dashboard.html">
-                <i class="tim-icons icon-chart-pie-36"></i>
+            <li>
+              <a href="{% url 'index' %}">
+                <i class="tim-icons icon-bullet-list-67"></i>
+                <p>Home</p>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'dashboard' %}">
+                <i class="tim-icons icon-chart-bar-32"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li>
-              <a href="./icons.html">
+              <a href="{% url 'register-tickets' %}">
+                <i class="tim-icons icon-notes"></i>
+                <p>Register Ticket</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="tim-icons icon-single-copy-04"></i>
+                <p>All Tickets</p>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'icons' %}">
                 <i class="tim-icons icon-atom"></i>
                 <p>Icons</p>
               </a>
             </li>
             <li>
-              <a href="./map.html">
+              <a href="{% url 'map' %}">
                 <i class="tim-icons icon-pin"></i>
                 <p>Maps</p>
               </a>
             </li>
             <li>
-              <a href="./notifications.html">
+              <a href="{% url 'notifications' %}">
                 <i class="tim-icons icon-bell-55"></i>
                 <p>Notifications</p>
               </a>
             </li>
             <li>
-              <a href="./user.html">
+              <a href="{% url 'user' %}">
                 <i class="tim-icons icon-single-02"></i>
                 <p>User Profile</p>
               </a>
             </li>
             <li>
-              <a href="./tables.html">
-                <i class="tim-icons icon-puzzle-10"></i>
-                <p>Table List</p>
-              </a>
-            </li>
-            <li>
-              <a href="./typography.html">
+              <a href="{% url 'typography' %}">
                 <i class="tim-icons icon-align-center"></i>
                 <p>Typography</p>
-              </a>
-            </li>
-            <li>
-              <a href="./rtl.html">
-                <i class="tim-icons icon-world"></i>
-                <p>RTL Support</p>
-              </a>
-            </li>
-            <li class="active-pro">
-              <a href="./upgrade.html">
-                <i class="tim-icons icon-spaceship"></i>
-                <p>Upgrade to PRO</p>
               </a>
             </li>
           </ul>
         </div>
       </div>
+
       <div class="main-panel">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
@@ -115,7 +114,7 @@
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+              <a class="navbar-brand" href="javascript:void(0)">{% block map %} Base {% endblock %}</a></a>
             </div>
             <button
               class="navbar-toggler"
@@ -191,16 +190,9 @@
                   </ul>
                 </li>
                 <li class="dropdown nav-item">
-                  <a
-                    href="#"
-                    class="dropdown-toggle nav-link"
-                    data-toggle="dropdown"
-                  >
+                  <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                     <div class="photo">
-                      <img
-                        src="{% static 'img/anime3.png' %}"
-                        alt="Profile Photo"
-                      />
+                      <img src="https://avatars.dicebear.com/api/bottts/{{ user.get_username }}.svg" alt="Profile Photo" />
                     </div>
                     <b class="caret d-none d-lg-block d-xl-block"></b>
                     <p class="d-lg-none">Log out</p>
@@ -223,7 +215,7 @@
                     <li class="dropdown-divider"></li>
                     <li class="nav-link">
                       <a
-                        href="javascript:void(0)"
+                        href="/accounts/logout"
                         class="nav-item dropdown-item"
                         >Log out</a
                       >
