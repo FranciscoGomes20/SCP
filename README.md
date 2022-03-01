@@ -1,12 +1,5 @@
 # SCP - Sistema de Chamados Python
 
-<!-- ## Heroku 
-
-No momento, o projeto está rodando em um servidor do Heroku. Você pode acessar e testar através do link:
-<p></p>
-
--->
-
 ## Pré-Requisitos
 
 Deve possuir o Python na versão 3.9 instalado na máquina (preferencialmente a versão 3.9.8)
